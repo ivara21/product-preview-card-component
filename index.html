@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: hsl(30, 38%, 92%);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .container {
+      display: flex;
+      border-color: 1px solid black;
+      max-width: 560px;
+      
+      width: 100%;
+      overflow: hidden;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-div {
+      flex: 1;
+    }
+
+    .image-div img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .pic {
+      width: 100%;
+    }
+   
+
+    .description-div {
+      flex: 1;
+      margin: 25px 0px 0px 30px;
+      max-width: 100%;
+      
+    }
+    .text1 span {
+      margin-right: 1px;
+      color:  hsl(228, 12%, 48%);
+      font-size: 12px;
+      
+    }
+
+    .text2 {
+      margin-top: 18px;
+      font-size: 30px;
+      width: 190px;
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      
+    }
+
+    .text3 {
+      margin-top: 18px;
+      color: hsl(228, 12%, 48%);
+      width: 230px;
+      font-size: 14px;
+    }
+
+    .text4 {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    .text4 span {
+      font-size: 25px;
+      font-weight: 700;
+      margin-right: 25px;
+      font-family: 'Fraunces', serif;
+      color: hsl(158, 36%, 37%);
+    }
+    .text4 p {
+      color: hsl(228, 12%, 48%);
+      text-decoration: line-through;
+      font-size: 12px;
+    }
+
+    .addtocart-button {
+      margin-top: 18px;
+      width: 230px;
+      height: 40px;
+      background-color:hsl(158, 36%, 37%); 
+      border-radius: 8px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .addtocart-button span {
+      color: hsl(0, 0%, 100%);
+      margin-left: 8px;
+      font-weight: 700;
+      font-size: 12px;
+      
+    }
+
+    @media (max-width:375px) {
+      
+
+      .container {
+        flex-direction: column;
+        width: 265px;
+      }
+
+      .image-div,
+      .description-div {
+        flex: 1 1 auto;
+      }
+      .description-div {
+        margin: 15px 0px 0px 15px;
+        padding-bottom: 15px; 
+        width: 200px;
+      }
+      .text2 {
+        font-size: 20px;
+      }
+      .text3 {
+        width: 230px;
+        font-size: 11px;
+      }
+
+  }
+
+  
+
+    
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-div">
+      <img id="pic" src="images/image-product-desktop.jpg" alt="">
+
+    </div>
+    <div class="description-div">
+      <div class="text1">
+      <span>P</span>
+      <span>E</span>
+      <span>R</span>
+      <span>F</span>
+      <span>U</span>
+      <span>M</span>
+      <span>E</span>
+      </div>
+      <div class="text2">
+        Gabrielle Essence Eau De Parfum
+      </div>
+      
+      <div class="text3">
+      A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+      Perfumer-Creator for the House of CHANEL.
+      </div>
+      
+      <div class="text4">
+      <span>$149.99</span>
+      <p>$169.99</p>
+      </div>
+      <button class="addtocart-button">
+      <img src="images/icon-cart.svg" alt="">
+      <span>Add to Cart</span>
+      </button>
+    </div>
+
+  </div>
+ 
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script>
+     function updateImageSrc() {
+      const image = document.getElementById('pic');
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth >= 375) {
+        image.src = 'images/image-product-desktop.jpg';
+      } else {
+        image.src = 'images/image-product-mobile.jpg';
+      }
+    }
+
+    // Initial update on page load
+    updateImageSrc();
+
+    // Update image on window resize
+    window.addEventListener('resize', updateImageSrc);
+  </script>
+</body>
+</html>
