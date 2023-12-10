@@ -50,7 +50,7 @@
     }
 
     .pic {
-      width: 100%;
+      min-width: 560px;
     }
    
 
@@ -129,12 +129,15 @@
       .container {
         flex-direction: column;
         width: 265px;
+        
       }
 
       .image-div,
       .description-div {
         flex: 1 1 auto;
       }
+
+      
       .description-div {
         margin: 15px 0px 0px 15px;
         padding-bottom: 15px; 
@@ -150,6 +153,53 @@
 
   }
 
+  @media (min-width:376px) {
+    picture {
+      min-width:200px;
+      
+    }
+
+    .pic {
+      height: auto;
+      position: absolute;
+    }
+    
+    .container {
+      width: 500px;
+      height: 300px;
+    }
+    .text2,
+    .text3,
+    .text4,
+    .addtocart-button {
+      margin-top: 10px;
+      margin-left: 2px;
+    }
+
+    .text2 {
+      font-size: 22px;
+    }
+
+    .text3 {
+      font-size: 9px;
+      width: 150px;
+    }
+    .text4 {
+      font-size: 9px;
+    }
+    .description-div {
+      margin-left: 10px;
+      width: 200px;
+    }
+    .addtocart-button{
+      width: 180px;
+      height: 30px;
+    }
+
+    
+  }
+
+
   
 
     
@@ -158,10 +208,11 @@
 </head>
 <body>
   <div class="container">
-    <div class="image-div">
+    <picture class="image-div">
+      <source media="(width <= 375px)" srcset="images/image-product-mobile.jpg">
       <img id="pic" src="images/image-product-desktop.jpg" alt="">
 
-    </div>
+    </picture>
     <div class="description-div">
       <div class="text1">
       <span>P</span>
